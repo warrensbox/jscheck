@@ -4,21 +4,17 @@ VER := $(shell git ls-remote --tags git://github.com/warrensbox/tfjscheck | awk 
 PATH := build:$(PATH)
 GOOS ?= $(shell go env GOOS)
 GOARCH ?= $(shell go env GOARCH)
-CLIENT_ID := $(CLIENT_ID)
-CLIENT_SECRET := $(CLIENT_SECRET)
 
-$(EXE): Gopkg.lock *.go lib/*.go
-	go build -v -ldflags "-X main.version=$(VER) -X main.CLIENT_ID=$(CLIENT_ID) -X main.CLIENT_SECRET=$(CLIENT_SECRET)" -o $@ $(PKG)
+$(EXE): go.mod *.go lib/*/*.go
+	go build -v -ldflags "-X main.version=$(VER)" -o $@ $(PKG)
 
-Gopkg.lock: Gopkg.toml
-	dep ensure
 
 .PHONY: release
 release: $(EXE) darwin linux
 
 .PHONY: darwin linux 
 darwin linux:
-	GOOS=$@ go build -ldflags "-X main.version=$(VER) -X main.CLIENT_ID=$(CLIENT_ID) -X main.CLIENT_SECRET=$(CLIENT_SECRET)" -o $(EXE)-$(VER)-$@-$(GOARCH) $(PKG)
+	GOOS=$@ go build -ldflags "-X main.version=$(VER)" -o $(EXE)-$(VER)-$@-$(GOARCH) $(PKG)
 
 .PHONY: clean
 clean:
