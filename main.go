@@ -91,7 +91,7 @@ func main() {
 					if len(fileStr) > 0 { //if file content > 0; continue
 
 						//get the first character in file
-						openChar := fileStr[0:1]
+						openChar := fileStr[0:3]
 						openChar = lib.RemoveNewLine(openChar)
 
 						//get the last character in file

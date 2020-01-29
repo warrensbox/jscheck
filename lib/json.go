@@ -16,9 +16,9 @@ func RemoveNewLine(char string) string {
 
 	char = strings.TrimPrefix(char, "\n") //remove new line from beginning
 	char = strings.TrimSuffix(char, "\n") //remove new line from end of line
-
-	strings.Replace(char, "\n", "", -1)
+	strings.ReplaceAll(char, "\n", "")
 	strings.Replace(char, " ", "", -1)
 
+	char = strings.TrimSpace(char)
 	return char
 }
