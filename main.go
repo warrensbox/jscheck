@@ -1,14 +1,13 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"log"
-	"net/http"
 	"os"
 	"path/filepath"
-	"strings"
+
+	"github.com/warrensbox/tfjscheck/lib"
 )
 
 /*
@@ -20,31 +19,7 @@ import (
 
 func main() {
 
-	f, err := os.Open("generals.json")
-	if err != nil {
-		panic(err)
-	}
-	defer f.Close()
-
-	contentType, err := GetFileContentType(f)
-	if err != nil {
-		panic(err)
-	}
-
-	fmt.Println("Content Type: " + contentType)
-
-	// buf, _ := ioutil.ReadFile("version")
-
-	// kind, _ := filetype.Match(buf)
-	// if kind == filetype.Unknown {
-	// 	fmt.Println("Unknown file type")
-	// 	return
-	// }
-
-	// fmt.Printf("File type: %s. MIME: %s\n", kind.Extension, kind.MIME.Value)
-
-	os.Exit(0)
-	validJson := true
+	validJSON := true
 
 	//Map of allowed extensions for variable
 	//Currently it only accepts 4 extension
@@ -81,22 +56,20 @@ func main() {
 
 						//get the first character in file
 						openChar := fileStr[0:1]
-						openChar = strings.TrimPrefix(openChar, "\n") //remove new line from beginning
-						openChar = strings.TrimSuffix(openChar, "\n") //remove new line from end of line
+						openChar = lib.RemoveNewLine(openChar)
 
 						//get the last character in file
 						closeChar := fileStr[len(fileContent)-2:]
-						closeChar = strings.TrimPrefix(closeChar, "\n") //remove new line from beginning
-						closeChar = strings.TrimSuffix(closeChar, "\n") //remove new line from end of line
+						closeChar = lib.RemoveNewLine(closeChar)
 
 						//if the file starts with { and }, it assume that it is a json file; continue
 						if openChar == "{" && closeChar == "}" {
 							//check if it's a valid json file
-							valid := isJSON(fileStr)
+							valid := lib.IsJSON(fileStr)
 							if !valid {
 								fmt.Println("ERROR in JSON:")
 								fmt.Println(path)
-								validJson = false
+								validJSON = false
 							}
 						}
 					}
@@ -111,32 +84,9 @@ func main() {
 		log.Println(errWalking)
 	}
 
-	if !validJson {
+	if !validJSON {
 		os.Exit(1)
 	}
 
 	os.Exit(0)
-}
-
-//isJSON : check if valid json
-func isJSON(s string) bool {
-	var js map[string]interface{}
-	return json.Unmarshal([]byte(s), &js) == nil
-}
-
-func GetFileContentType(out *os.File) (string, error) {
-
-	// Only the first 512 bytes are used to sniff the content type.
-	buffer := make([]byte, 512)
-
-	_, err := out.Read(buffer)
-	if err != nil {
-		return "", err
-	}
-
-	// Use the net/http package's handy DectectContentType function. Always returns a valid
-	// content-type by returning "application/octet-stream" if no others seemed to match.
-	contentType := http.DetectContentType(buffer)
-
-	return contentType, nil
 }
