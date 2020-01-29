@@ -8,6 +8,7 @@ import (
 	"path/filepath"
 
 	"github.com/warrensbox/tfjscheck/lib"
+	kingpin "gopkg.in/alecthomas/kingpin.v2"
 )
 
 /*
@@ -17,9 +18,35 @@ import (
 
 /*** OPERATION WORKFLOW ***/
 
+var version = "0.1.0\n"
+
+var (
+	debugFlag   *bool
+	versionFlag *bool
+	directory   *string
+)
+
+func init() {
+
+	const (
+		cmdDesc         = "Install github app binaries on your local machine. Ex: hubapp install mmmorris1975/aws-runas"
+		versionFlagDesc = "Displays the version of hubapp"
+		actionArgDesc   = "Provide action needed. Ex: install, update, or uninstall"
+		giturlArgDesc   = "Provide giturl in user/repo format. Ex: mmmorris1975/aws-runas"
+	)
+
+	versionFlag = kingpin.Flag("version", versionFlagDesc).Short('v').Bool()
+	directory = kingpin.Flag("directory", versionFlagDesc).Short('d').String()
+
+}
+
 func main() {
 
 	validJSON := true
+	dir := "."
+
+	kingpin.CommandLine.Interspersed(false)
+	kingpin.Parse()
 
 	//Map of allowed extensions for variable
 	//Currently it only accepts 4 extension
@@ -29,14 +56,23 @@ func main() {
 	allowedExt[".auto.tfvars"] = true
 	allowedExt[".auto.tfvars.json"] = true
 
+	if *versionFlag {
+		fmt.Printf("Version : %s\n", version)
+	}
+
+	if *directory != "" {
+		fmt.Println("DIR")
+		dir = *directory
+	}
+
 	//Walking through current directory
-	errWalking := filepath.Walk(".",
+	errWalking := filepath.Walk(dir,
 		func(path string, info os.FileInfo, err error) error {
 			if err != nil {
 				fmt.Println("Error walking through directory")
 				return err
 			}
-
+			fmt.Println("path", path)
 			//Get path of sub driectory and files
 			filePath, errPath := os.Stat(path)
 			mode := filePath.Mode()
