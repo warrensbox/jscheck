@@ -2,3 +2,4 @@ generals.json
 generals.tfvars
 main
 tfjscheck
+build

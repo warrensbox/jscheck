@@ -26,6 +26,3 @@ test: $(EXE)
 	go test -v ./...
 
 
-.PHONEY: dep
-dep:
-	dep ensure
