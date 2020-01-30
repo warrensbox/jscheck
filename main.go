@@ -72,7 +72,7 @@ func main() {
 				fmt.Println("Error walking through directory")
 				return err
 			}
-			fmt.Println("path", path)
+
 			//Get path of sub driectory and files
 			filePath, errPath := os.Stat(path)
 			mode := filePath.Mode()
