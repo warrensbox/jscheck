@@ -41,6 +41,8 @@ jobs:
             mkdir -p /home/circleci/bin
             export PATH="/home/warrensbox/bin:${PATH}"
             rm -rf dist
+            ls
+            exit 
             git config user.email "warren.veerasingam@gmail.com"
             git config user.name "warrensbox"
             git tag -a ${RELEASE_VERSION} -m "Release Version"
