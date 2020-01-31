@@ -1,5 +1,5 @@
 generals.json
 generals.tfvars
 main
-tfjscheck
+jscheck
 build

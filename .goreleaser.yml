@@ -4,7 +4,7 @@ builds:
   - ldflags:
     - -s -w -X "main.version={{.Env.RELEASE_VERSION}}"
   - main: main.go
-    binary: tfjscheck
+    binary: jscheck
     goos:
       - windows
       - darwin
@@ -25,14 +25,13 @@ archive:
     darwin: darwin
     linux: linux
     386: 386
-    amd64: amd64
   format_overrides:
   - goos: windows
     format: zip
 brew:
   # Name of the recipe
   # Default to project name
-  name: tfjscheck
+  name: jscheck
 
   # Reporitory to push the tap to.
   github:
@@ -55,11 +54,11 @@ brew:
 
   # Caveats for the user of your binary.
   # Default is empty.
-  caveats: "Type 'tfjscheck' on your command line and recursively lint check validity of tfvars json files in you current directory and subdirectories. This command currently only works on MacOs and Linux"
+  caveats: "Type 'jscheck' on your command line and recursively lint check validity of tfvars json files in you current directory and subdirectories. This command currently only works on MacOs and Linux"
 
   # Your app's homepage.
   # Default is empty.
-  homepage: "https://github.com/warrensbox/tfjscheck"
+  homepage: "https://github.com/warrensbox/jscheck"
 
   # Your app's description.
   # Default is empty.
@@ -74,8 +73,8 @@ brew:
   # So you can `brew test` your formula.
   # Default is empty.
   test: |
-    system "#{bin}/tfjscheck --version"
+    system "#{bin}/jscheck --version"
   # Custom install script for brew.
   # Default is 'bin.install "program"'.
   install: |
-    bin.install "tfjscheck"
+    bin.install "jscheck"

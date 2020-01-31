@@ -7,7 +7,7 @@ jobs:
     docker:
       - image: circleci/golang:1.13
 
-    working_directory: /go/src/github.com/warrensbox/tfjscheck
+    working_directory: /go/src/github.com/warrensbox/jscheck
 
     steps:
       - checkout
@@ -18,12 +18,12 @@ jobs:
             go vet -tests=false ./...
             go test -v ./...
             mkdir -p build
-            go build -v -o build/tfjscheck
+            go build -v -o build/jscheck
   release:
     docker:
       - image: circleci/golang:1.13
 
-    working_directory: /go/src/github.com/warrensbox/tfjscheck
+    working_directory: /go/src/github.com/warrensbox/jscheck
 
     steps:
       - checkout

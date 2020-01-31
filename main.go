@@ -7,7 +7,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/warrensbox/tfjscheck/lib"
+	"github.com/warrensbox/jscheck/lib"
 	kingpin "gopkg.in/alecthomas/kingpin.v2"
 )
 
