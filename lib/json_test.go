@@ -3,7 +3,7 @@ package lib_test
 import (
 	"testing"
 
-	"github.com/warrensbox/tfjscheck/lib"
+	"github.com/warrensbox/jscheck/lib"
 )
 
 func TestvalidJSON(t *testing.T) {
