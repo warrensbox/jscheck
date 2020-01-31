@@ -78,7 +78,7 @@ func main() {
 			mode := filePath.Mode()
 
 			if errPath != nil {
-				fmt.Println("Error getting path")
+				fmt.Println("Error getting path!")
 			}
 
 			//if if it is a file; continue
