@@ -6,7 +6,7 @@ before:
     # you may remove this if you don't use vgo
     # you may remove this if you don't need go generate
 builds:
-  - ldflags:
+- ldflags:
     - -s -w -X "main.version={{.Env.RELEASE_VERSION}}"
 - env:
   - CGO_ENABLED=0
