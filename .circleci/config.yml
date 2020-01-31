@@ -30,6 +30,7 @@ jobs:
       - run: 
           command: |
             set +e   
+            pwd
             go get -v -t -d ./...
             go vet -tests=false ./...
             source version
