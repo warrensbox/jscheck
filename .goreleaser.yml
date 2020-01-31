@@ -6,11 +6,12 @@ before:
     # you may remove this if you don't use vgo
     # you may remove this if you don't need go generate
 builds:
-- id: "jscheck"
+- id: "{{ .ProjectName }}-{{ .Version }}"
 - ldflags:
     - -s -w -X "main.version={{.Env.RELEASE_VERSION}}"
 - env:
   - CGO_ENABLED=0
+  - GO111MODULE=on
 archives:
 - replacements:
     darwin: Darwin
