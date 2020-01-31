@@ -3,3 +3,4 @@ generals.tfvars
 main
 jscheck
 build
+dist/*
