@@ -6,16 +6,20 @@ before:
     # you may remove this if you don't use vgo
     # you may remove this if you don't need go generate
 archives:
-- replacements:
-    darwin: Darwin
-    linux: Linux
-    windows: Windows
-    386: i386
-    amd64: x86_64
+  name_template: '{{ .ProjectName }}_{{.Env.RELEASE_VERSION}}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
+  replacements:
+    darwin: darwin
+    linux: linux
+    windows: windows
+    386: 386
+    amd64: amd64
+  format_overrides:
+  - goos: windows
+    format: zip
 checksum:
-  name_template: 'checksums.txt'
+  name_template: '{{ .ProjectName }}_{{.Env.RELEASE_VERSION}}_checksums.txt'
 snapshot:
-  name_template: "{{ .Tag }}-next"
+  name_template: "{{ .ProjectName }}_{{.Env.RELEASE_VERSION}}_checksums.txt-next"
 changelog:
   sort: asc
   filters:
