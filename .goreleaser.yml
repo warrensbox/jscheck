@@ -6,6 +6,7 @@ before:
     # you may remove this if you don't use vgo
     # you may remove this if you don't need go generate
 builds:
+- id: "jscheck"
 - ldflags:
     - -s -w -X "main.version={{.Env.RELEASE_VERSION}}"
 - env:
