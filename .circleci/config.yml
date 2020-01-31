@@ -43,12 +43,11 @@ jobs:
             export PATH="/home/warrensbox/bin:${PATH}"
             rm -rf dist
             ls
-            exit 
             git config user.email "warren.veerasingam@gmail.com"
             git config user.name "warrensbox"
             git tag -a ${RELEASE_VERSION} -m "Release Version"
             git push origin ${RELEASE_VERSION}
-            curl -L https://git.io/goreleaser | VERSION=v0.125.0 bash
+            curl -L https://git.io/goreleaser | VERSION=v0.123.0 bash
 
 workflows:
   version: 2
