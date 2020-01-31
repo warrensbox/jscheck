@@ -79,6 +79,7 @@ builds:
       - freebsd
       - windows
       - linux
+      - darwin
 
     # GOARCH to build for.
     # For more info refer to: https://golang.org/doc/install/source#environment
