@@ -118,6 +118,6 @@ builds:
     # for example, to run generators.
     # Those fields allow templates.
     # Default is both hooks empty.
-    hooks:
-      pre: rice embed-go
-      post: ./script.sh
+    #hooks:
+    #  pre: rice embed-go
+    #  post: ./script.sh
