@@ -32,9 +32,6 @@ jobs:
             set +e   
             go get -v -t -d ./...
             go vet -tests=false ./...
-            go test -v ./...
-            mkdir -p build
-            go build -v -o build/aws-find
             source version
             export RELEASE_VERSION; 
             RELEASE_VERSION=$RELEASE_VERSION.${CIRCLE_BUILD_NUM}
@@ -42,7 +39,6 @@ jobs:
             echo $RELEASE_VERSION
             echo $GITHUB_TOKEN
             mkdir -p /home/circleci/bin
-            curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
             export PATH="/home/warrensbox/bin:${PATH}"
             rm -rf dist
             git config user.email "warren.veerasingam@gmail.com"
