@@ -58,6 +58,7 @@ func main() {
 
 	if *versionFlag {
 		fmt.Printf("Version : %s\n", version)
+		os.Exit(0)
 	}
 
 	if *directory != "" {
