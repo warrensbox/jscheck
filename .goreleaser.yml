@@ -11,7 +11,7 @@ archives:
     linux: linux
     windows: windows
     386: 386
-    amd64: x86_64
+    amd64: amd64
   name_template: '{{ .ProjectName }}_{{.Env.RELEASE_VERSION}}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
   id: jscheck
   format_overrides:
