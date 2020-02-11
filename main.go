@@ -49,12 +49,13 @@ func main() {
 	kingpin.Parse()
 
 	//Map of allowed extensions for variable
-	//Currently it only accepts 4 extension
+	//Currently it only accepts 5 extension
 	var allowedExt = make(map[string]bool)
 	allowedExt[".tfvars"] = true
 	allowedExt[".tfvars.json"] = true
 	allowedExt[".auto.tfvars"] = true
 	allowedExt[".auto.tfvars.json"] = true
+	allowedExt[".json"] = true
 
 	if *versionFlag {
 		fmt.Printf("Version : %s\n", version)
