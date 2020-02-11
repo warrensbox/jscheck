@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/warrensbox/terraform-switcher.svg?branch=master)](https://travis-ci.org/warrensbox/terraform-switcher)
-[![Go Report Card](https://goreportcard.com/badge/github.com/warrensbox/terraform-switcher)](https://goreportcard.com/report/github.com/warrensbox/terraform-switcher)
-[![CircleCI](https://circleci.com/gh/warrensbox/terraform-switcher/tree/master.svg?style=shield&circle-token=55ddceec95ff67eb38269152282f8a7d761c79a5)](https://circleci.com/gh/warrensbox/terraform-switcher)
+[![Build Status](https://travis-ci.org/warrensbox/jscheck.svg?branch=master)](https://travis-ci.org/warrensbox/jscheck)
+[![Go Report Card](https://goreportcard.com/badge/github.com/warrensbox/jscheck)](https://goreportcard.com/report/github.com/warrensbox/jscheck)
+[![CircleCI](https://circleci.com/gh/warrensbox/jscheck/tree/master.svg?style=shield&circle-token=55ddceec95ff67eb38269152282f8a7d761c79a5)](https://circleci.com/gh/warrensbox/jscheck)
 
 # JSCheck
 
