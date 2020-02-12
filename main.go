@@ -63,7 +63,6 @@ func main() {
 	}
 
 	if *directory != "" {
-		fmt.Println("DIR")
 		dir = *directory
 	}
 
