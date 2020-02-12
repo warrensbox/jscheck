@@ -8,8 +8,8 @@
 
 <!-- ![gopher](https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/tfswitch/logo.png =100x20) -->
 
-The `jscheck` command line tool lets you look for json files and check's it's validity.
-Sometimes we not all our json files end with a `.json` extension. `jscheck` tries to figure out if your json file has is a json file and then runs a lint check.
+The `jscheck` command line tool looks for json files and check's it's validity.
+Sometimes not all our json files end with a `.json` extension. `jscheck` tries to figure out if your file has is a json format before linting.
 The installation is minimal and easy.
 
 ## Installation
@@ -41,8 +41,8 @@ Alternatively, you can install the binary from source [here](https://github.com/
 ### Without args
 <img src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/tfswitch/tfswitch.gif" alt="drawing" style="width: 180px;"/>
 
-1.  You can switch between different versions of terraform by typing the command `tfswitch` on your terminal.
-2.  Select the version of terraform you require by using the up and down arrow.
+1.  By typing the command `jscheck` on your terminal, it walk through all your directory let lets you know if there is an error in your json format files.
+2.  When you don't specify a directory, it will check your current and child directories.
 
 
 The most recently selected versions are presented at the top of the dropdown.
@@ -50,25 +50,22 @@ The most recently selected versions are presented at the top of the dropdown.
 ### Supply directory on command line
 <img src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/tfswitch/tfswitch-v4.gif" alt="drawing" style="width: 170px;"/>
 
-1. You can also supply the desired version as an argument on the command line.
-2. For example, `tfswitch 0.10.5` for version 0.10.5 of terraform.
-3. Hit **Enter** to switch.
+1. You can also supply the desired directory to walk through as an argument on the command line.
+2. For example, `jscheck -d dirname` for walk through `dirname`.
 
 **Execute as part of jenkins job**
 
 ```
- sh """\
-          #!/bin/bash 
-          eval "\$(chef shell-init bash)"
-          echo install jscheck
-          wget https://raw.githubusercontent.com/warrensbox/jscheck/release/install.sh 
-          chmod 755 install.sh
-          ./install.sh -b installs
-          ls 
-          ./installs/jscheck -v
+    sh """\
+        #!/bin/bash 
+        eval "\$(chef shell-init bash)"
+        echo install jscheck
+        wget https://raw.githubusercontent.com/warrensbox/jscheck/release/install.sh 
+        chmod 755 install.sh
+        ./install.sh -b installs
 
-          #./installs/jscheck
-          """.stripIndent()
+        ./installs/jscheck
+        """.stripIndent()
 ```
 
 ## Issues
