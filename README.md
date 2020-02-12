@@ -54,17 +54,21 @@ The most recently selected versions are presented at the top of the dropdown.
 2. For example, `tfswitch 0.10.5` for version 0.10.5 of terraform.
 3. Hit **Enter** to switch.
 
-**Execute part jenkins job**
+**Execute as part of jenkins job**
 
 ```
-cdtfswitch(){
-  builtin cd "$@";
-  cdir=$PWD;
-  if [ -f "$cdir/.tfswitchrc" ]; then
-    tfswitch
-  fi
-}
-alias cd='cdtfswitch'
+ sh """\
+          #!/bin/bash 
+          eval "\$(chef shell-init bash)"
+          echo install jscheck
+          wget https://raw.githubusercontent.com/warrensbox/jscheck/release/install.sh 
+          chmod 755 install.sh
+          ./install.sh -b installs
+          ls 
+          ./installs/jscheck -v
+
+          #./installs/jscheck
+          """.stripIndent()
 ```
 
 ## Issues
