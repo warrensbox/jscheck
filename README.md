@@ -4,7 +4,7 @@
 
 # JSCheck
 
-<img style="text-allign:center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/tfswitch/smallerlogo.png" alt="drawing" width="120" height="130"/>
+<img style="text-allign:center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/jscheck/smallerlogo.png" alt="drawing" width="120" height="130"/>
 
 <!-- ![gopher](https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/tfswitch/logo.png =100x20) -->
 
@@ -39,7 +39,7 @@ Alternatively, you can install the binary from source [here](https://github.com/
 
 ## How to use:
 ### Without args
-<img src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/jscheck/jscheck_v1.gif" alt="drawing" style="width: 180px;"/>
+<img src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/jscheck/jscheck_v1.gif" alt="drawing" style="width: 210px;"/>
 
 1.  By typing the command `jscheck` on your terminal, it walk through all your directory let lets you know if there is an error in your json format files.
 2.  When you don't specify a directory, it will check your current and child directories.
