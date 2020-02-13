@@ -47,7 +47,7 @@ Alternatively, you can install the binary from source [here](https://github.com/
 
 The most recently selected versions are presented at the top of the dropdown.
 
-### Supply directory on command line
+### Specify a directory 
 <img src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/jscheck/jscheck_v2.gif" alt="drawing" style="width: 170px;"/>
 
 1. You can also supply the desired directory to walk through as an argument on the command line.
