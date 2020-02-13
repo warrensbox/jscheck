@@ -39,7 +39,7 @@ Alternatively, you can install the binary from source [here](https://github.com/
 
 ## How to use:
 ### Without args
-<img src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/tfswitch/tfswitch.gif" alt="drawing" style="width: 180px;"/>
+<img src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/jscheck/jscheck_v1.gif" alt="drawing" style="width: 180px;"/>
 
 1.  By typing the command `jscheck` on your terminal, it walk through all your directory let lets you know if there is an error in your json format files.
 2.  When you don't specify a directory, it will check your current and child directories.
@@ -48,7 +48,7 @@ Alternatively, you can install the binary from source [here](https://github.com/
 The most recently selected versions are presented at the top of the dropdown.
 
 ### Supply directory on command line
-<img src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/tfswitch/tfswitch-v4.gif" alt="drawing" style="width: 170px;"/>
+<img src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/jscheck/jscheck_v2.gif" alt="drawing" style="width: 170px;"/>
 
 1. You can also supply the desired directory to walk through as an argument on the command line.
 2. For example, `jscheck -d dirname` for walk through `dirname`.
