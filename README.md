@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/warrensbox/jscheck.svg?branch=master)](https://travis-ci.org/warrensbox/jscheck)
 [![Go Report Card](https://goreportcard.com/badge/github.com/warrensbox/jscheck)](https://goreportcard.com/report/github.com/warrensbox/jscheck)
-[![CircleCI](https://circleci.com/gh/warrensbox/jscheck/tree/master.svg?style=shield&circle-token=55ddceec95ff67eb38269152282f8a7d761c79a5)](https://circleci.com/gh/warrensbox/jscheck)
+[![CircleCI](https://circleci.com/gh/warrensbox/jscheck/tree/release.svg?style=shield&circle-token=59e89260bc775454057c7e775977510f03130ae1)](https://circleci.com/gh/warrensbox/jscheck)
 
 # JSCheck
 
