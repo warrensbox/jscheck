@@ -56,7 +56,7 @@ func main() {
 	allowedExt[".auto.tfvars"] = true
 	allowedExt[".auto.tfvars.json"] = true
 	allowedExt[".json"] = true
-	allowedExt[".properties"] = true
+	//allowedExt[".properties"] = true needs more testing
 
 	if *versionFlag {
 		fmt.Printf("Version : %s\n", version)
