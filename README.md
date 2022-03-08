@@ -8,7 +8,7 @@
 
 <!-- ![gopher](https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/tfswitch/logo.png =100x20) -->
 
-The `jscheck` command line tool looks for json files and check's it's validity.
+The `jscheck` command line tool looks for json files and check's its validity.
 Sometimes not all our json files end with a `.json` extension. `jscheck` tries to figure out if your file has is a json format before linting.
 The installation is minimal and easy.
 
